@@ -15,6 +15,8 @@ function generatePassword() {
 
   var charsToUse = "";
 
+  var pass = ""
+
   var passLength = window.prompt("Enter password length from 8 to 128");
    if (!passLength){
      return
@@ -54,9 +56,26 @@ function generatePassword() {
   }else if(lowerCase && !upperCase && !numeric && !specialChars){
     charsToUse = characters[0] ;
   }else if(lowerCase && !upperCase && numeric && specialChars){
-    charsToUse = characters[0] + characters[2] + characters[3]
+    charsToUse = characters[0] + characters[2] + characters[3];
+  }else if(lowerCase && !upperCase && numeric && !specialChars){
+    charsToUse = characters[0] + characters[1] + characters[2];
+  }else if(lowerCase && upperCase && numeric && !specialChars){
+    charsToUse = characters[0] + characters[1] + characters[2];
+  }else if(!lowerCase && !upperCase && !numeric && specialChars){
+    charsToUse = characters[3];
+  }else if(!lowerCase && !upperCase && numeric && specialChars){
+    charsToUse = characters[2] + characters[3];
+  }else if(!lowerCase && upperCase && numeric && specialChars){
+    charsToUse = characters[1] + characters[2] + characters[3];
   }
 
+
+  for(i = 0; i < passLength; i++){
+    var randomNumber = Math.floor(Math.random() * charsToUse.length);
+    pass += charsToUse.substring(randomNumber, randomNumber +1);
+    
+  }
+  return pass;
 } 
 
 // Write password to the #password input
