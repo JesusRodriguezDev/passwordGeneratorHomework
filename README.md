@@ -10,4 +10,4 @@
 
 ## Live Page Link:
 
-[External Link to Live Page](https://github.com/JesusRodriguezDev/passwordGeneratorHomework)
+[External Link to Live Page](https://jesusrodriguezdev.github.io/passwordGeneratorHomework/)
